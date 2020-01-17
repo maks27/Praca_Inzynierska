@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class CameraMAin : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+
     public GameObject player;
-    private Vector3 offset = new Vector3(0,0,-6);
-    // Update is called once per frame
-    public float rotationSpeed = 1 ;
-    void Update()
+    public float cameraDistance = 0;
+    public Camera cam;
+    float zoom;
+    public int speed;
+    //Vector3 pos = 
+    // Use this for initialization
+    void Start()
     {
-        Vector3 rotation = transform.eulerAngles;
-        rotation.y += Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
-        //transform.eulerAngles = player.transform.eulerAngles * rotationSpeed; 
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 3, player.transform.position.z) + offset;
-        transform.eulerAngles = rotation;
+         
+    }
 
-
+    void LateUpdate()
+    {
+        transform.position = player.transform.position - player.transform.forward * cameraDistance;
+        transform.LookAt(player.transform.position);
+        transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
+        zoom = cam.fieldOfView;
+        zoom -= Input.GetAxis("Mouse ScrollWheel") * speed;
+        cam.fieldOfView = zoom;
     }
 }

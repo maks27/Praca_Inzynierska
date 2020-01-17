@@ -84,8 +84,14 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Path.Editor">
+      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -98,21 +104,6 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools.Editor">
-      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
@@ -132,11 +123,20 @@
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TerrainTools.Editor">
+      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/Nowy folder/2019.2.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

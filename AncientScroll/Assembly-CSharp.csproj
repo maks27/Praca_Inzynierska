@@ -65,16 +65,27 @@
   <ItemGroup>
     <Compile Include="Assets\Script\CameraMAin.cs" />
     <Compile Include="Assets\Script\DataPlayer.cs" />
+    <Compile Include="Assets\Script\EnemyController.cs" />
+    <Compile Include="Assets\Script\Equip.cs" />
+    <Compile Include="Assets\Script\EquipmentManage.cs" />
+    <Compile Include="Assets\Script\EquipmentSlot.cs" />
+    <Compile Include="Assets\Script\Interactive.cs" />
     <Compile Include="Assets\Script\Inventory.cs" />
+    <Compile Include="Assets\Script\InvSlot.cs" />
+    <Compile Include="Assets\Script\InvUI.cs" />
+    <Compile Include="Assets\Script\IPickup.cs" />
+    <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Script\Menu.cs" />
+    <Compile Include="Assets\Script\PlayerManager.cs" />
     <Compile Include="Assets\Script\PlayerMovment.cs" />
     <Compile Include="Assets\Script\PlayerStats.cs" />
     <Compile Include="Assets\Script\SaveGame.cs" />
-    <Compile Include="Assets\Walking.cs" />
+    <Compile Include="Assets\Script\Walking.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\Terrain\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\Character\Player\shaders\doublesidedshader.shader" />
@@ -100,8 +111,14 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Path.Editor">
+      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -114,21 +131,6 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools.Editor">
-      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
@@ -148,11 +150,20 @@
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TerrainTools.Editor">
+      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
       <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>E:/Inżynierka/Praca_Inzynierska/AncientScroll/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/Nowy folder/2019.2.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
