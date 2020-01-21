@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\CameraMAin.cs" />
+    <Compile Include="Assets\Script\CharacterStats.cs" />
     <Compile Include="Assets\Script\DataPlayer.cs" />
     <Compile Include="Assets\Script\EnemyController.cs" />
     <Compile Include="Assets\Script\Equip.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\Script\PlayerMovment.cs" />
     <Compile Include="Assets\Script\PlayerStats.cs" />
     <Compile Include="Assets\Script\SaveGame.cs" />
+    <Compile Include="Assets\Script\Stats.cs" />
     <Compile Include="Assets\Script\Walking.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

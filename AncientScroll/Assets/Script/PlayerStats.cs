@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Timers;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : CharacterStats
 {
     public static PlayerStats players;
-    public float hp = 1000;
     public Slider hpcount;
     public Slider staminacount;
     public float stamina;
@@ -15,21 +14,23 @@ public class PlayerStats : MonoBehaviour
     public int dexterity;
     public int inteligent;
     public int charism;
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        EquipmentManage.Manage.onEquipinfo += OnEquipchange;
+        maxHealth = 100;
+        CurrentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-        hpcount.value = hp;
+        hpcount.value = CurrentHealth;
         staminacount.value = stamina;
+        hpcount.maxValue = maxHealth;
 
-        if (hp <= 0)
+        if (CurrentHealth <= 0)
         {
             Debug.Log("Gameover");
         }
@@ -40,22 +41,23 @@ public class PlayerStats : MonoBehaviour
     {
         players = this;
     }
-    public void Damage(int damage)
-    {
-      
-        hp -= damage;
-        Debug.Log(hp);
-    }
-    public void heal(int damage)
-    {
 
-        hp += damage;
-        Debug.Log(hp);
-    }
     public void Staminareg(int value)
     {
         stamina += value;
     }
-
+    void OnEquipchange(Equip newItem,Equip olditem)
+    {
+        if (newItem != null)
+        {
+            armor.AddMod(newItem.armorm);
+            damage.AddMod(newItem.damagem);
+        }
+        if(olditem != null)
+        {
+            armor.RemoveMod(olditem.armorm);
+            damage.RemoveMod(olditem.damagem);
+        }
+    }
 
 }

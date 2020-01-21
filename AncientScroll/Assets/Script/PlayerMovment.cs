@@ -14,13 +14,12 @@ public class PlayerMovment : MonoBehaviour
     public float runspeed;
     public float jump_speed;
     float spin = 0f;
-    float mousex;
     Vector3 move = Vector3.zero;
     CharacterController controller;
     Animator anim;
     Rigidbody rb;
     PlayerStats PlayerStats;
-    Timer t = new Timer();
+    readonly Timer t = new Timer();
     void Start()
     {
         controller = GetComponent<CharacterController>();

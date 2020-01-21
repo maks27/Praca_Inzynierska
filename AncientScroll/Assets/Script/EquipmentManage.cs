@@ -8,9 +8,11 @@ public class EquipmentManage : MonoBehaviour
     public static EquipmentManage Manage;
     Inventory Inventory;
     EquipmentSlot[] SlotsEq;
-    public delegate void Equipdelegat();
+    public delegate void Equipdelegat(Equip newitem, Equip oldItem);
     public Equipdelegat onEquipinfo;
     EquipmentSlot EquipmentSlot;
+    public delegate void VisualEquip();
+    public VisualEquip visualinfo;
     private void Awake()
     {
         Manage = this;
@@ -23,7 +25,7 @@ public class EquipmentManage : MonoBehaviour
         EquipNow = new Equip[numSlots];
         Inventory = Inventory.Inv;
         SlotsEq = Slots.GetComponentsInChildren<EquipmentSlot>();
-        onEquipinfo += UpdateUI;
+        visualinfo += UpdateUI;
     }
     public void Equipthis(Equip equip)
     {
@@ -35,7 +37,8 @@ public class EquipmentManage : MonoBehaviour
             Inventory.Add_it(old);
         }
         EquipNow[slotI] = equip;
-        if (onEquipinfo != null) onEquipinfo.Invoke();
+        if (onEquipinfo != null) onEquipinfo.Invoke(equip,old);
+        if (visualinfo != null) visualinfo.Invoke();
 
     }
     public void UpdateUI()
