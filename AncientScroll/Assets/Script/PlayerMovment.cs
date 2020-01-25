@@ -7,9 +7,9 @@ using System.Timers;
 public class PlayerMovment : MonoBehaviour
 {
     //Zmienne
-    int lap = 10;
-    public bool Jump = true;
+    public bool Jump = false;
     public bool Sneak;
+    private bool running = false;
     public float speed;
     public float runspeed;
     public float jump_speed;
@@ -19,17 +19,19 @@ public class PlayerMovment : MonoBehaviour
     Animator anim;
     Rigidbody rb;
     PlayerStats PlayerStats;
-    readonly Timer t = new Timer();
+    public delegate void Stamina();
+    public Stamina staminat;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         PlayerStats = GetComponent<PlayerStats>();
+        staminat += UpdateUI;
     }
     void Update()
     {
-
         if (controller.isGrounded)
         {
             if (Input.GetKey(KeyCode.W))
@@ -50,39 +52,26 @@ public class PlayerMovment : MonoBehaviour
                 
                 speed *= runspeed;
                 anim.SetBool("Run", true);
-                if (PlayerStats.stamina > 0)
-                StaminaTimer();
-               
-
+                running = true;
             }
+            
+        
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
-                t.Stop();
+                running = false;
                 speed = 1;
                 anim.SetBool("Run", false);
             }
-            if (!false && Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-
-                move = Vector3.zero;
-                Jump = true;
-
+                rb.AddForce(move = Vector3.up * jump_speed, ForceMode.Impulse);
+               
             }
-            if (Input.GetKeyDown(KeyCode.Space) && Jump)
-            {
-
-                rb.AddForce(move = Vector3.up * jump_speed);
-                Jump = false;
+            
+          
 
 
-
-            }
-            if (PlayerStats.stamina <= 0)
-            {
-                speed = 1;
-                anim.SetBool("Run", false);
-            }
-
+            if (staminat != null) staminat.Invoke();
             spin += Input.GetAxis("Horizontal");
             transform.eulerAngles = new Vector3(0, spin, 0);
 
@@ -91,19 +80,35 @@ public class PlayerMovment : MonoBehaviour
 
         controller.Move(move * Time.deltaTime);
     }
-    public void StaminaTimer()
+  
+    
+        public void UpdateUI()
     {
-        t.Elapsed += new ElapsedEventHandler(onTimer);
-            t.Interval = 500;
-            t.Start();
-        void onTimer(object source, ElapsedEventArgs e)
+        if (running)
         {
-      
-                PlayerStats.stamina -= lap;
-                if (PlayerStats.stamina <= 0) t.Stop();
-           
+            PlayerStats.stamina -= Time.deltaTime *20;
         }
-        Debug.Log(t);
+        if (running == false)
+        {
+            PlayerStats.stamina += Time.deltaTime*10;
+
+        }
+        if (PlayerStats.stamina <= 0)
+        {
+            PlayerStats.stamina = 0;
+            speed = 1;
+            anim.SetBool("Run", false);
+        }else if(PlayerStats.stamina >=200)
+        {
+            PlayerStats.stamina = 200;
+        }
+        if(Jump)
+        {
+            move = new Vector3(0, 1, 1);
+            Jump = false;
+        }
       
+       
     }
+   
 }
