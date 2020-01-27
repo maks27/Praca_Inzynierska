@@ -86,21 +86,21 @@ public class PlayerMovment : MonoBehaviour
     {
         if (running)
         {
-            PlayerStats.stamina -= Time.deltaTime *20;
+            PlayerStats.Currentstamina -= Time.deltaTime *20;
         }
         if (running == false)
         {
-            PlayerStats.stamina += Time.deltaTime*10;
+            PlayerStats.Currentstamina += Time.deltaTime*10;
 
         }
-        if (PlayerStats.stamina <= 0)
+        if (PlayerStats.Currentstamina <= 0)
         {
-            PlayerStats.stamina = 0;
+            PlayerStats.Currentstamina = 0;
             speed = 1;
             anim.SetBool("Run", false);
-        }else if(PlayerStats.stamina >=200)
+        }else if(PlayerStats.Currentstamina >= PlayerStats.maxstamina)
         {
-            PlayerStats.stamina = 200;
+            PlayerStats.Currentstamina = PlayerStats.maxstamina;
         }
         if(Jump)
         {

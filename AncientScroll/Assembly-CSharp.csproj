@@ -83,6 +83,7 @@
     <Compile Include="Assets\Script\SaveGame.cs" />
     <Compile Include="Assets\Script\Stats.cs" />
     <Compile Include="Assets\Script\Walking.cs" />
+    <Compile Include="Assets\Stats_text.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
