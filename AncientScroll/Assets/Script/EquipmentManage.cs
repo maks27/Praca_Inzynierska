@@ -17,12 +17,15 @@ public class EquipmentManage : MonoBehaviour
     {
         Manage = this;
     }
+    public SkinnedMeshRenderer targetMesh;
     Equip[] EquipNow;
+    SkinnedMeshRenderer[] equipMeshes;
 
     private void Start()
     {
         int numSlots = System.Enum.GetNames(typeof(EquipSlot)).Length;
         EquipNow = new Equip[numSlots];
+        equipMeshes = new SkinnedMeshRenderer[numSlots];
         Inventory = Inventory.Inv;
         SlotsEq = Slots.GetComponentsInChildren<EquipmentSlot>();
         visualinfo += UpdateUI;
@@ -37,6 +40,11 @@ public class EquipmentManage : MonoBehaviour
             Inventory.Add_it(old);
         }
         EquipNow[slotI] = equip;
+        SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(equip.mesh);
+        newMesh.transform.parent = targetMesh.transform;
+        newMesh.bones = targetMesh.bones;
+        newMesh.rootBone = targetMesh.rootBone;
+        equipMeshes[slotI] = newMesh;
         if (onEquipinfo != null) onEquipinfo.Invoke(equip,old);
         if (visualinfo != null) visualinfo.Invoke();
 

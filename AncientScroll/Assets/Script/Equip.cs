@@ -5,6 +5,7 @@ using UnityEngine;
 public class Equip : Item
 {
     public EquipSlot Cathegories;
+    public SkinnedMeshRenderer mesh;
     public int armorm;
     public int damagem;
     public override void Use()

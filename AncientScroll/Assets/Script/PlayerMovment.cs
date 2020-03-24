@@ -32,8 +32,19 @@ public class PlayerMovment : MonoBehaviour
     }
     void Update()
     {
+     
         if (controller.isGrounded)
         {
+            if (Input.GetMouseButton(0))
+            {
+                anim.SetBool("Attack", true);
+             
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                anim.SetBool("Attack", false);
+
+            }
             if (Input.GetKey(KeyCode.W))
             {
                 anim.SetBool("Walking", true);
@@ -46,16 +57,16 @@ public class PlayerMovment : MonoBehaviour
                 move = new Vector3(0, 0, 0);
                 anim.SetBool("Walking", false);
             }
-            
+
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                
+
                 speed *= runspeed;
                 anim.SetBool("Run", true);
                 running = true;
             }
-            
-        
+
+
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 running = false;
@@ -65,17 +76,11 @@ public class PlayerMovment : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 rb.AddForce(move = Vector3.up * jump_speed, ForceMode.Impulse);
-               
+
             }
-            
-          
-
-
             if (staminat != null) staminat.Invoke();
             spin += Input.GetAxis("Horizontal");
             transform.eulerAngles = new Vector3(0, spin, 0);
-
-
         }
 
         controller.Move(move * Time.deltaTime);
