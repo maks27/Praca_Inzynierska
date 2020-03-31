@@ -65,8 +65,12 @@
   <ItemGroup>
     <Compile Include="Assets\Script\CameraMAin.cs" />
     <Compile Include="Assets\Script\CharacterStats.cs" />
+    <Compile Include="Assets\Script\Combat.cs" />
+    <Compile Include="Assets\Script\ConverttoMEsh.cs" />
     <Compile Include="Assets\Script\DataPlayer.cs" />
+    <Compile Include="Assets\Script\Enemy.cs" />
     <Compile Include="Assets\Script\EnemyController.cs" />
+    <Compile Include="Assets\Script\EnemyStats.cs" />
     <Compile Include="Assets\Script\Equip.cs" />
     <Compile Include="Assets\Script\EquipmentManage.cs" />
     <Compile Include="Assets\Script\EquipmentSlot.cs" />
@@ -88,10 +92,12 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\MedievalTownExteriors\Readme.txt" />
     <None Include="Assets\Terrain\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\3DForge\FantasyExteriors\Village &amp; Towns\Documents\Blacksmith v1.0 - user guide.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />

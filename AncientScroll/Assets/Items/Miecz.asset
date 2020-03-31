@@ -18,4 +18,4 @@ MonoBehaviour:
   Cathegories: 6
   mesh: {fileID: 6540159475794085552, guid: e51f6f778bcf39240a0d4f8fc3bbd6e3, type: 3}
   armorm: 0
-  damagem: 3
+  damagem: 10

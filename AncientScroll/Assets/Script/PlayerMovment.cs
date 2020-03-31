@@ -38,14 +38,12 @@ public class PlayerMovment : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 anim.SetBool("Attack", true);
-             
             }
             if (Input.GetMouseButtonUp(0))
             {
                 anim.SetBool("Attack", false);
-
             }
-            if (Input.GetKey(KeyCode.W))
+                if (Input.GetKey(KeyCode.W))
             {
                 anim.SetBool("Walking", true);
                 move = new Vector3(0, 0, 1);

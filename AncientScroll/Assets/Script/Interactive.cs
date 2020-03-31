@@ -10,6 +10,7 @@ public class Interactive : MonoBehaviour
     {
        // Debug.Log("Press E to interact");
     }
+  
     private void Update()
     {
     

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Timers;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : CharacterStats
 {
@@ -31,10 +32,7 @@ public class PlayerStats : CharacterStats
         staminacount.value = Currentstamina;
         hpcount.maxValue = maxHealth;
         staminacount.maxValue = maxstamina;
-        if (CurrentHealth <= 0)
-        {
-            Debug.Log("Gameover");
-        }
+
         
        
     }
@@ -55,6 +53,14 @@ public class PlayerStats : CharacterStats
         {
             armor.RemoveMod(olditem.armorm);
             damage.RemoveMod(olditem.damagem);
+        }
+    }
+    public override void Die()
+    {
+        if (CurrentHealth <= 0)
+        {
+            base.Die();
+            SceneManager.LoadScene(2);
         }
     }
 
