@@ -14,11 +14,6 @@ public class InvUI : MonoBehaviour
         slot = Slots.GetComponentsInChildren<InvSlot>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-      
-    }
     void UpdateUI()
     {
         for (int i = 0; i < slot.Length; i++)

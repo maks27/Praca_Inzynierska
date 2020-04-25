@@ -8,8 +8,9 @@ using TMPro;
 
 public class DialogeManager : MonoBehaviour
 {
+    MovementManager player;
     public Transform Texttransform;
-
+    CameraMenager camMenager;
     public GameObject DialogueBox;
     public Dialogue dialogue;
     bool enableDialogueBox = false;
@@ -17,37 +18,56 @@ public class DialogeManager : MonoBehaviour
     public Button button;
     Queue<string> npcconversation;
     Queue<string> playerresponse;
-
+    public delegate void Enddialoge();
+    public Enddialoge enddialoge;
     void Start()
     {
+        player = MovementManager.movement;
+        camMenager = CameraMenager.instance;
         npcconversation = new Queue<string>();
         playerresponse = new Queue<string>();
         Dt = Texttransform.GetComponentsInChildren<DialogueText>();
     }
 
-    public void MakeDialogue(Dialogue dialogue)
+
+    public void MakeDialogue(Dialogue dialogue,bool end)
     {
-        enableDialogueBox = true;
-        npcconversation.Clear();
-        playerresponse.Clear();
-        foreach (string text in dialogue.npcconversation)
+
+            Cursor.lockState = CursorLockMode.None;
+            enableDialogueBox = true;
+            npcconversation.Clear();
+            playerresponse.Clear();
+            camMenager.GetComponent<MouseLook>().enabled = false;
+            player.GetComponent<PlayerMovment>().enabled = false;
+        if (end == false)
         {
+            foreach (string text in dialogue.npcconversation)
+            {
 
-            npcconversation.Enqueue(text);
+                npcconversation.Enqueue(text);
 
+            }
+            foreach (string text in dialogue.playerresponse)
+            {
+
+                playerresponse.Enqueue(text);
+
+            }
+            OnCLick();
         }
-        foreach (string text in dialogue.playerresponse)
+            //OpenDialog();
+            if (enableDialogueBox == true)
+            {
+                DialogueBox.SetActive(true);
+            }
+    
+        
+        if(end == true)
         {
-
-            playerresponse.Enqueue(text);
-
+            Dt[0].AddText(dialogue.endline);
+            Dt[1].AddText("Koniec");
+            
         }
-        //OpenDialog();
-        if (enableDialogueBox == true)
-        {
-            DialogueBox.SetActive(true);
-        }
-        OnCLick();
     }
     public void OnCLick()
     {
@@ -59,6 +79,7 @@ public class DialogeManager : MonoBehaviour
         if (queue.Count == 0)
         {
             Debug.Log("Koniec Dialogu");
+            EndConv();
             return;
         }
         Dt[0].AddText(queue.Dequeue());
@@ -73,10 +94,9 @@ public class DialogeManager : MonoBehaviour
         {
             DialogueBox.SetActive(false);
         }
-        return;
+        camMenager.GetComponent<MouseLook>().enabled = true;
+        player.GetComponent<PlayerMovment>().enabled = true;
     }
-    
-
 
 
 }

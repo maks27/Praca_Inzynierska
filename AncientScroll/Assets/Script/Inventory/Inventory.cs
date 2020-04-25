@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour
     public bool check = false;
     public delegate void ChangedItem();
     public ChangedItem onItemChangeinfo;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -25,7 +26,6 @@ public class Inventory : MonoBehaviour
         else
         {
             inventory.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {

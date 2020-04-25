@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DoorInteraction : Interactive
 {
-    Animator animation;
-    BoxCollider collider;
+    Animator anim;
+    BoxCollider coll;
     private void Start()
     {
-        animation = GetComponent<Animator>();
-        collider = GetComponent<BoxCollider>();
+        anim = GetComponent<Animator>();
+        coll = GetComponent<BoxCollider>();
     }
     public override void Interact()
     {
@@ -23,13 +23,13 @@ public class DoorInteraction : Interactive
 
         if (Input.GetKey(KeyCode.E))
         {
-            animation.SetBool("IsOpen", true);
-            collider.isTrigger = true;
+            anim.SetBool("IsOpen", true);
+            coll.isTrigger = true;
 
-            if (animation.GetCurrentAnimatorStateInfo(0).IsName("DoorOpenState"))
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("DoorOpenState"))
             {
-                animation.SetBool("IsOpen", false);
-                collider.isTrigger = false;
+                anim.SetBool("IsOpen", false);
+                coll.isTrigger = false;
             }
            
         }

@@ -7,17 +7,13 @@ using System.Timers;
 public class PlayerMovment : MonoBehaviour
 {
     //Zmienne
-    public bool Jump = false;
-    public bool Sneak;
     private bool running = false;
     public float speed;
     public float runspeed;
-    public float jump_speed;
     float spin = 0f;
     Vector3 move = Vector3.zero;
     CharacterController controller;
     Animator anim;
-    Rigidbody rb;
     PlayerStats PlayerStats;
     public delegate void Stamina();
     public Stamina staminat;
@@ -26,7 +22,6 @@ public class PlayerMovment : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody>();
         PlayerStats = GetComponent<PlayerStats>();
         staminat += UpdateUI;
     }
@@ -35,6 +30,7 @@ public class PlayerMovment : MonoBehaviour
      
         if (controller.isGrounded)
         {
+         
             if (Input.GetMouseButton(0))
             {
                 anim.SetBool("Attack", true);
@@ -71,11 +67,7 @@ public class PlayerMovment : MonoBehaviour
                 speed = 1;
                 anim.SetBool("Run", false);
             }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                rb.AddForce(move = Vector3.up * jump_speed, ForceMode.Impulse);
-
-            }
+           
             if (staminat != null) staminat.Invoke();
             spin += Input.GetAxis("Horizontal");
             transform.eulerAngles = new Vector3(0, spin, 0);
@@ -104,11 +96,6 @@ public class PlayerMovment : MonoBehaviour
         }else if(PlayerStats.Currentstamina >= PlayerStats.maxstamina)
         {
             PlayerStats.Currentstamina = PlayerStats.maxstamina;
-        }
-        if(Jump)
-        {
-            move = new Vector3(0, 1, 1);
-            Jump = false;
         }
       
        
