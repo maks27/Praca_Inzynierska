@@ -69,6 +69,7 @@
     <Compile Include="Assets\Script\AI\EnemyController.cs" />
     <Compile Include="Assets\Script\AI\EnemyStats.cs" />
     <Compile Include="Assets\Script\Character\CharacterStats.cs" />
+    <Compile Include="Assets\Script\Character\Npcanimator.cs" />
     <Compile Include="Assets\Script\Character\Stats.cs" />
     <Compile Include="Assets\Script\Combat\Combat.cs" />
     <Compile Include="Assets\Script\CursorMode.cs" />

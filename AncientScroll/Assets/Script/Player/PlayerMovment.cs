@@ -2,8 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Timers;
-
+using UnityEngine.AI;
 public class PlayerMovment : MonoBehaviour
 {
     //Zmienne
@@ -17,13 +16,17 @@ public class PlayerMovment : MonoBehaviour
     PlayerStats PlayerStats;
     public delegate void Stamina();
     public Stamina staminat;
-
+    protected AnimatorOverrideController AnimatorOverrideController;
+    public AnimationClip[] attackClip;
     void Start()
     {
+        
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
         PlayerStats = GetComponent<PlayerStats>();
         staminat += UpdateUI;
+        AnimatorOverrideController = new AnimatorOverrideController(anim.runtimeAnimatorController);
+        anim.runtimeAnimatorController = AnimatorOverrideController;
     }
     void Update()
     {
@@ -31,15 +34,20 @@ public class PlayerMovment : MonoBehaviour
         if (controller.isGrounded)
         {
          
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 anim.SetBool("Attack", true);
+                AnimationAttack();
+
             }
             if (Input.GetMouseButtonUp(0))
             {
+
                 anim.SetBool("Attack", false);
+
             }
-                if (Input.GetKey(KeyCode.W))
+
+            if (Input.GetKey(KeyCode.W))
             {
                 anim.SetBool("Walking", true);
                 move = new Vector3(0, 0, 1);
@@ -100,5 +108,12 @@ public class PlayerMovment : MonoBehaviour
       
        
     }
-   
+      void AnimationAttack()
+    {
+        int aimindex = UnityEngine.Random.Range(0, attackClip.Length);
+        AnimatorOverrideController["Armature|Atak01"] = attackClip[aimindex];
+
+        
+            
+    }
 }

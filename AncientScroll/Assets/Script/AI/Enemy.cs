@@ -20,7 +20,6 @@ public class Enemy : Interactive
         base.Interact();
         if (Input.GetMouseButton(0)) 
         {
-            //anim.SetBool("Attack", true);
 
 
             Combat playerCombat = playerManager.player.GetComponent<Combat>();
