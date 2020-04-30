@@ -8306,7 +8306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Slots: {fileID: 1958304388}
-  targetMesh: {fileID: 0}
+  targetMesh: {fileID: 854767316118214894}
 --- !u!114 &1052534140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16988,7 +16988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  runspeed: 5
+  runspeed: 3
   attackClip:
   - {fileID: 2143937659329295374, guid: 7321cc4bcb9b7574387011706c9a50ba, type: 3}
   - {fileID: -786667288434868306, guid: 7321cc4bcb9b7574387011706c9a50ba, type: 3}
@@ -17822,6 +17822,7 @@ GameObject:
   - component: {fileID: 131776818}
   - component: {fileID: 131776821}
   - component: {fileID: 131776822}
+  - component: {fileID: 1067054107574396}
   m_Layer: 0
   m_Name: Character_Elf
   m_TagString: Untagged
@@ -17829,6 +17830,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1067054107574396
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067054107574395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.130391, z: 0.6461434}
+  m_Center: {x: -2.1226576e-11, y: 0.89953613, z: -0.0054703862}
 --- !u!1 &1103209201399881
 GameObject:
   m_ObjectHideFlags: 0
@@ -20673,20 +20687,6 @@ Transform:
   m_Father: {fileID: 6248467707807310190}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1181752020233771707
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3671028418889212646}
-  m_LocalRotation: {x: 0.011608418, y: 0.057131924, z: 0.79232645, w: 0.6073055}
-  m_LocalPosition: {x: 0.3530414, y: 0.82569385, z: 0.108707234}
-  m_LocalScale: {x: 0.01236976, y: 0.009482715, z: 0.013179327}
-  m_Children: []
-  m_Father: {fileID: 6248467707807310190}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1183204289328456172
 Transform:
   m_ObjectHideFlags: 0
@@ -21153,7 +21153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6248467707807310190}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1655851768260123481
 Transform:
@@ -22718,92 +22718,6 @@ Transform:
   m_Father: {fileID: 1079971739853840272}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &3619574784625211218
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3671028418889212646}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 163c89560447e474cb586fd9acfcee03, type: 2}
-  - {fileID: 2100000, guid: 4014714bc1c9fce488b4356ba345a781, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4686849319519084627, guid: 7321cc4bcb9b7574387011706c9a50ba, type: 3}
-  m_Bones:
-  - {fileID: 3455140578447752718}
-  - {fileID: 2183196194255721744}
-  - {fileID: 5121349451700502443}
-  - {fileID: 7292683229460568219}
-  - {fileID: 323390168885639635}
-  - {fileID: 8649889021447397905}
-  - {fileID: 1687724212651860179}
-  - {fileID: 8422835899010851019}
-  - {fileID: 5598892876467798791}
-  - {fileID: 2445154520396999674}
-  - {fileID: 4190895256870118944}
-  - {fileID: 4829191817534079493}
-  - {fileID: 4343685351966130227}
-  - {fileID: 1893629873609531311}
-  - {fileID: 5317934520982109299}
-  - {fileID: 5974398408640735201}
-  - {fileID: 16459019075669035}
-  - {fileID: 2409828622872497200}
-  - {fileID: 5937300129978951787}
-  - {fileID: 405142735670637053}
-  - {fileID: 4545155065828613739}
-  - {fileID: 1466029632881465800}
-  - {fileID: 7857660833213723174}
-  - {fileID: 5737433711096253491}
-  - {fileID: 7694446235156727638}
-  - {fileID: 79992450531551387}
-  - {fileID: 8683053831490478756}
-  - {fileID: 6756953336557635135}
-  - {fileID: 2785198182371534329}
-  - {fileID: 6574762345476117460}
-  - {fileID: 788008279913326175}
-  - {fileID: 7292504020972358685}
-  - {fileID: 5559143787852813977}
-  - {fileID: 996048317554287341}
-  - {fileID: 8659369218517266312}
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 3455140578447752718}
-  m_AABB:
-    m_Center: {x: 0.3603704, y: 0.10195938, z: 0.46329904}
-    m_Extent: {x: 0.13971661, y: 0.2856682, z: 0.49394226}
-  m_DirtyAABB: 0
 --- !u!1 &3644308399478839575
 GameObject:
   m_ObjectHideFlags: 0
@@ -22848,23 +22762,6 @@ GameObject:
   - component: {fileID: 7712601051947681752}
   m_Layer: 0
   m_Name: Karwasze
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &3671028418889212646
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1181752020233771707}
-  - component: {fileID: 3619574784625211218}
-  m_Layer: 0
-  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23281,7 +23178,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 163c89560447e474cb586fd9acfcee03, type: 2}
-  - {fileID: 5988347114677481029, guid: 7321cc4bcb9b7574387011706c9a50ba, type: 3}
+  - {fileID: 2100000, guid: 4014714bc1c9fce488b4356ba345a781, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24474,7 +24371,6 @@ Transform:
   - {fileID: 2150569549229726519}
   - {fileID: 4418980768484627324}
   - {fileID: 2577630750233718120}
-  - {fileID: 1181752020233771707}
   - {fileID: 1653538643269377046}
   m_Father: {fileID: 127907486}
   m_RootOrder: 0

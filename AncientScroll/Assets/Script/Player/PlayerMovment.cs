@@ -18,6 +18,7 @@ public class PlayerMovment : MonoBehaviour
     public Stamina staminat;
     protected AnimatorOverrideController AnimatorOverrideController;
     public AnimationClip[] attackClip;
+    static float speed2;
     void Start()
     {
         
@@ -27,6 +28,7 @@ public class PlayerMovment : MonoBehaviour
         staminat += UpdateUI;
         AnimatorOverrideController = new AnimatorOverrideController(anim.runtimeAnimatorController);
         anim.runtimeAnimatorController = AnimatorOverrideController;
+        speed2 = speed;
     }
     void Update()
     {
@@ -38,6 +40,7 @@ public class PlayerMovment : MonoBehaviour
             {
                 anim.SetBool("Attack", true);
                 AnimationAttack();
+               
 
             }
             if (Input.GetMouseButtonUp(0))
@@ -72,7 +75,7 @@ public class PlayerMovment : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 running = false;
-                speed = 1;
+                speed = speed2;
                 anim.SetBool("Run", false);
             }
            
@@ -87,6 +90,7 @@ public class PlayerMovment : MonoBehaviour
     
         public void UpdateUI()
     {
+        
         if (running)
         {
             PlayerStats.Currentstamina -= Time.deltaTime *20;
@@ -99,12 +103,13 @@ public class PlayerMovment : MonoBehaviour
         if (PlayerStats.Currentstamina <= 0)
         {
             PlayerStats.Currentstamina = 0;
-            speed = 1;
+            speed = speed2;
             anim.SetBool("Run", false);
         }else if(PlayerStats.Currentstamina >= PlayerStats.maxstamina)
         {
             PlayerStats.Currentstamina = PlayerStats.maxstamina;
         }
+      
       
        
     }

@@ -22,10 +22,12 @@ public class Inventory : MonoBehaviour
         {
             inventory.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            PauseGame();
         }
         else
         {
             inventory.SetActive(false);
+            ContinueGame();
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -68,5 +70,13 @@ public class Inventory : MonoBehaviour
     {
         items.Remove(item);
         if (onItemChangeinfo != null) onItemChangeinfo.Invoke();
+    }
+    private void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+    private void ContinueGame()
+    {
+        Time.timeScale = 1;
     }
 }
