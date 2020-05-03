@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InvUI : MonoBehaviour
 {
     public Transform Slots;
     Inventory inventory;
     InvSlot[] slot;
+    public GameObject jurnal;
+    public TextMeshProUGUI text;
+    public bool Change { get; private set; } = false;
     void Start()
     {
         inventory = Inventory.Inv;
@@ -27,5 +31,20 @@ public class InvUI : MonoBehaviour
                 slot[i].Clear();
             }
         }
+    }
+    public void OpenJurnal()
+    {
+        Change = !Change;
+        if(Change==true)
+        {
+            jurnal.SetActive(true);
+            text.text = "Ekwipunek";
+        }
+        else
+        {
+            jurnal.SetActive(false);
+            text.text = "Dziennik";
+        }
+
     }
 }

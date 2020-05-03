@@ -25,9 +25,7 @@ public class Stats_text : MonoBehaviour
     {
         hptext.text =(PlayerStats.CurrentHealth.ToString() + " / " + PlayerStats.maxHealth.ToString());
         sttext.text = (PlayerStats.Currentstamina.ToString("0.") + " / " + PlayerStats.maxstamina.ToString());
-        strtext.text = PlayerStats.strange.ToString();
-        dextext.text = PlayerStats.dexterity.ToString();
-        inttext.text = PlayerStats.inteligent.ToString();
+        strtext.text = PlayerStats.strenght.ToString();
         charrtext.text = PlayerStats.charism.ToString();
         armor.text = PlayerStats.armor.GetValue().ToString();
         damage.text = PlayerStats.damage.GetValue().ToString();

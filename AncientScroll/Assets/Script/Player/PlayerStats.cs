@@ -11,10 +11,13 @@ public class PlayerStats : CharacterStats
     public Slider hpcount;
     public Slider staminacount;
     public float maxstamina = 200;
-    public int strange;
-    public int dexterity;
-    public int inteligent;
+    public int strenght;
     public int charism;
+    public Button Strlevel;
+    public Button Charismlevel;
+    public int pointsperlevel;
+    int temppoints;
+    public int currentexp;
     public float Currentstamina { get; set; }
     // Start is called before the first frame update
     void Start()
@@ -32,8 +35,16 @@ public class PlayerStats : CharacterStats
         staminacount.value = Currentstamina;
         hpcount.maxValue = maxHealth;
         staminacount.maxValue = maxstamina;
-
-        
+        if(currentexp >=100)
+        {
+            LevelUp();
+            currentexp = 0;
+        }
+         if(temppoints <= 0)
+        {
+            Strlevel.interactable = false;
+            Charismlevel.interactable = false;
+        }
        
     }
     private void Awake()
@@ -62,6 +73,23 @@ public class PlayerStats : CharacterStats
             base.Die();
             SceneManager.LoadScene(2);
         }
+    }
+    public void LevelUp()
+    {
+        temppoints = pointsperlevel;
+        Strlevel.interactable = true;
+        Charismlevel.interactable = true;
+        
+    }
+    public void addStr()
+    {
+        strenght += 1;
+        temppoints -= 1;
+    }
+    public void addCharism()
+    {
+        charism += 1;
+        temppoints -= 1;
     }
 
 }

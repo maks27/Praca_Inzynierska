@@ -8,6 +8,7 @@ public class MouseLook : MonoBehaviour
     public float mSpeed = 10f;
     public Transform player;
     float xRotation = 0f;
+    public bool checkcursor { get; set; } = true;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -16,7 +17,9 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
+        if(checkcursor == true)Cursor.lockState = CursorLockMode.Locked;
+        if (checkcursor == false) Cursor.lockState = CursorLockMode.None;
         float mX = Input.GetAxis("Horizontal") * mSpeed * Time.deltaTime;
         float mY = Input.GetAxis("Mouse Y") * mSpeed * Time.deltaTime;
         xRotation -= mY;

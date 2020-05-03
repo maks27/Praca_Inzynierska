@@ -13,10 +13,13 @@ public class EnemyController : MonoBehaviour
     Animator animator;
     public GameObject HealtBar;
     public GameObject Bar;
+    public bool iftalk = false;
+    public bool talk { get; private set; } = false;
     EnemyStats enemyStats;
     Image health;
     public int speed;
     public int sprint;
+    public bool wait;
     void Start()
     {
         enemyStats = GetComponent<EnemyStats>();
@@ -33,38 +36,50 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(target.position, transform.position);
-        HealtBar.SetActive(false);
-        if (distance <= radious)
+        if(wait == false)
         {
-            animator.SetBool("Walk", true);
-            if (distance <= radious/2)
+            if (distance <= radious)
             {
-             
-                animator.SetBool("Sprint", true);
-                agent.speed = sprint;
-
-            }
-            else
-            {
-                animator.SetBool("Sprint", false);
-                agent.speed = speed;
-            }
-            agent.SetDestination(target.position);
-            if (distance <= agent.stoppingDistance)
-            {
-                HealthBars();
-                animator.SetBool("Walk", false);
-                CharacterStats tStats = target.GetComponent<CharacterStats>();
-                if (tStats != null)
+                animator.SetBool("Walk", true);
+                if (distance <= radious / 2)
                 {
-                    animator.SetTrigger("Attack");
-                    combat.Attack(tStats);
+
+                    animator.SetBool("Sprint", true);
+                    agent.speed = sprint;
+
                 }
-                FaceTarget();
+                else
+                {
+                    animator.SetBool("Sprint", false);
+                    agent.speed = speed;
+                }
+                agent.SetDestination(target.position);
+                if (distance <= agent.stoppingDistance)
+                {
+                    HealtBar.SetActive(true);
+                    animator.SetBool("Walk", false);
+                    animator.SetBool("Sprint", false);
+                    if (iftalk == true) talk = true;
+                    if (iftalk == false)
+                    {
+
+                        HealthBars();
+                        CharacterStats tStats = target.GetComponent<CharacterStats>();
+                        if (tStats != null)
+                        {
+                            animator.SetTrigger("Attack");
+                            combat.Attack(tStats);
+                        }
+                    }
+                    FaceTarget();
+                }
+
             }
-          
 
-
+        }
+        if(wait ==true)
+        {
+            HealtBar.SetActive(false);
         }
     }
     void FaceTarget()
@@ -87,7 +102,6 @@ public class EnemyController : MonoBehaviour
             float curent;
             hp = enemyStats.maxHealth;
             curent = enemyStats.CurrentHealth / hp;
-            HealtBar.SetActive(true);
             health.fillAmount = curent;
         }
 

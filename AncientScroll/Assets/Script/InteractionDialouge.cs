@@ -6,8 +6,14 @@ public class InteractionDialouge : Interactive
 {
     public Dialogue dialogue;
     public bool EndDialouge = false;
+    DialogeManager manager;
+    public GameObject managerInstance;
 
 
+    private void Start()
+    {
+        manager = managerInstance.GetComponent<DialogeManager>();
+    }
     public override void Interact()
     {
         base.Interact();
@@ -15,6 +21,8 @@ public class InteractionDialouge : Interactive
         {
             Conversation();
             EndDialouge = true;
+            
+
         }
     }
     void Conversation()
@@ -22,6 +30,8 @@ public class InteractionDialouge : Interactive
 
         FindObjectOfType<DialogeManager>().MakeDialogue(dialogue,EndDialouge);
         
+
+
 
     }
 

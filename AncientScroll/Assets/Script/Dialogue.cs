@@ -8,5 +8,6 @@ public class Dialogue
     public string[] npcconversation;
     public string[] playerresponse;
     public string endline;
+    public string charismaresponse;
 
 }

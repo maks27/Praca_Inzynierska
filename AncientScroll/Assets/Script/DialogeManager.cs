@@ -18,8 +18,7 @@ public class DialogeManager : MonoBehaviour
     public Button button;
     Queue<string> npcconversation;
     Queue<string> playerresponse;
-    public delegate void Enddialoge();
-    public Enddialoge enddialoge;
+    public bool endcheck = false;
     void Start()
     {
         player = MovementManager.movement;
@@ -32,7 +31,6 @@ public class DialogeManager : MonoBehaviour
 
     public void MakeDialogue(Dialogue dialogue,bool end)
     {
-
             Cursor.lockState = CursorLockMode.None;
             enableDialogueBox = true;
             npcconversation.Clear();
@@ -80,6 +78,7 @@ public class DialogeManager : MonoBehaviour
         {
             Debug.Log("Koniec Dialogu");
             EndConv();
+            endcheck = true;
             return;
         }
         Dt[0].AddText(queue.Dequeue());
@@ -96,7 +95,13 @@ public class DialogeManager : MonoBehaviour
         }
         camMenager.GetComponent<MouseLook>().enabled = true;
         player.GetComponent<PlayerMovment>().enabled = true;
+
     }
 
+    public void CharismaSpeech(string text)
+    {
+        Dt[0].AddText(text);
+    }
+    
 
 }

@@ -63,7 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BanditQuest.cs" />
+    <Compile Include="Assets\DialogueEnemy.cs" />
     <Compile Include="Assets\MouseLook.cs" />
+    <Compile Include="Assets\QuestGive.cs" />
+    <Compile Include="Assets\QuestName.cs" />
     <Compile Include="Assets\ResponseSlot.cs" />
     <Compile Include="Assets\Script\AI\Enemy.cs" />
     <Compile Include="Assets\Script\AI\EnemyController.cs" />
