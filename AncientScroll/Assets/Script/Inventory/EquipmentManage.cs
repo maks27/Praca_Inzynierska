@@ -13,6 +13,8 @@ public class EquipmentManage : MonoBehaviour
     EquipmentSlot EquipmentSlot;
     public delegate void VisualEquip();
     public VisualEquip visualinfo;
+    [HideInInspector]
+    public bool check =false;
     private void Awake()
     {
         Manage = this;
@@ -32,6 +34,7 @@ public class EquipmentManage : MonoBehaviour
     }
     public void Equipthis(Equip equip)
     {
+        check = true;
         int slotI = (int)equip.Cathegories;
         Equip old = null;
         if (EquipNow[slotI] != null)

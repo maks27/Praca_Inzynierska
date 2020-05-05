@@ -5,6 +5,7 @@ using TMPro;
 
 public class InvUI : MonoBehaviour
 {
+    public GameObject Panel;
     public Transform Slots;
     Inventory inventory;
     InvSlot[] slot;
@@ -37,11 +38,13 @@ public class InvUI : MonoBehaviour
         Change = !Change;
         if(Change==true)
         {
+            Panel.SetActive(false);
             jurnal.SetActive(true);
             text.text = "Ekwipunek";
         }
         else
         {
+            Panel.SetActive(true);
             jurnal.SetActive(false);
             text.text = "Dziennik";
         }

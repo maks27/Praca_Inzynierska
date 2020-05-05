@@ -5,6 +5,8 @@ using UnityEngine;
 public class IPickup : Interactive
 {
     public Item Item;
+    [HideInInspector]
+    public bool pick = false;
     public override void Interact()
     {
         base.Interact();
@@ -21,6 +23,7 @@ public class IPickup : Interactive
             {
                 Destroy(gameObject);
                 Inventory.Inv.check = false;
+                pick = true;
             }
         }
        

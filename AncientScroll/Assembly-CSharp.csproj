@@ -103,8 +103,10 @@
     <Compile Include="Assets\Script\Player\PlayerMovment.cs" />
     <Compile Include="Assets\Script\Player\PlayerStats.cs" />
     <Compile Include="Assets\Script\Player\Walking.cs" />
+    <Compile Include="Assets\Script\tutorial\tutorial.cs" />
     <Compile Include="Assets\Script\UI\Item.cs" />
     <Compile Include="Assets\Script\UI\Menu.cs" />
+    <Compile Include="Assets\Script\UI\MenuinGame.cs" />
     <Compile Include="Assets\Stats_text.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
+    public bool enableMenu;
     public bool enableInventory;
     public GameObject inventory;
+    public GameObject Menu;
     public List<Item> items = new List<Item>();
     public static Inventory Inv;
     public int space = 20;
@@ -23,8 +25,27 @@ public class Inventory : MonoBehaviour
     }
     void Update()
     {
+        if(Menu.activeSelf)
+        {
+            inventory.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+            enableMenu = !enableMenu;
         if (Input.GetKeyDown(KeyCode.I))
-            enableInventory =!enableInventory;
+            enableInventory = !enableInventory;
+        if (enableMenu == true)
+        {
+            inventory.SetActive(false);
+            Menu.SetActive(true);
+            mouseLook.checkcursor = false;
+            PauseGame();
+        }
+        if (enableMenu== false)
+        {
+            mouseLook.checkcursor = true;
+            Menu.SetActive(false);
+            ContinueGame();
+        }
         if(enableInventory ==true)
         {
             inventory.SetActive(true);
@@ -37,11 +58,7 @@ public class Inventory : MonoBehaviour
             inventory.SetActive(false);
             ContinueGame();
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadSceneAsync(0);
-
-        }
+      
       
     }
     private void Awake()
