@@ -16,6 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: af98cbff5f8b60145a9012fadff79e9c, type: 3}
   isDefItem: 0
   Cathegories: 1
-  mesh: {fileID: 2038580804634434903, guid: e93c9ed10012d0145a96c640e5ef56ad, type: 3}
+  mesh: {fileID: 4053592146457977938, guid: b015dbba46a3950469801c9d578219e8, type: 3}
   armorm: 0
   damagem: 3

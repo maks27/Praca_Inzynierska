@@ -47,7 +47,7 @@ public class tutorial : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
             {
-                text.text = "Teraz wciśnij klaiwsz D lub A aby obrócić postać";
+                text.text = "Teraz wciśnij klaiwsz D lub A aby obrócić postać.";
                 check = false;
                 check2 = true;
             }
@@ -65,7 +65,7 @@ public class tutorial : MonoBehaviour
         {
             if (Input.GetAxis("Mouse Y") == 1 || Input.GetAxis("Mouse Y") == -1)
             {
-                text.text = "Dobrze teraz podejdz do szkieletu i wez swoja pierwsza broń oraz miksture uleczenia";
+                text.text = "Dobrze teraz podejdz do szkieletu i weź swoja pierwsza broń oraz miksture leczenia poprzez wcisnięcie klawisza E.Służy on do wchodzenia w interakcję z przedmiotami lub postaciami.";
                 check3 = false;
                 check4 = true;
             }
@@ -85,7 +85,7 @@ public class tutorial : MonoBehaviour
             if(Input.GetKey(KeyCode.I))
             {
                 invtext.SetActive(true);
-                text2.text = "W ekwipunku znajdują się posiadane przedmioty,statystyki bohatera oraz dziennik zadań.Aby użyć dany przedmiot kliknij na niego i zamknij ekwipunek wciskając klawisz I";
+                text2.text = "W ekwipunku znajdują się posiadane przedmioty,statystyki bohatera oraz dziennik zadań.Słuzy on także do rozwijania cech bohatera ,gdy ten zdobędzie nowy poziom.Aby użyć dany przedmiot, kliknij na niego i zamknij ekwipunek wciskając klawisz I";
                 check5 = false;
                 check6 = true;
                 tutorialtext.SetActive(false);
