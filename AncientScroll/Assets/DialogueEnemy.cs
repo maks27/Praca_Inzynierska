@@ -76,7 +76,7 @@ public class DialogueEnemy : MonoBehaviour
     }
     public void Charismadialouge()
     {
-        FindObjectOfType<DialogeManager>().CharismaSpeech(dialogue.charismaresponse);
+        FindObjectOfType<DialogeManager>().CharismaSpeech(dialogue);
         controller.enabled = false;
         textdisable.SetActive(false);
         charismaoption.SetActive(false);

@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestGive : MonoBehaviour
+public class QuestGive : Interactive
 {
     InteractionDialouge dialouge;
     public GameObject ActiveQuest;
     BanditQuest BanditQuest;
+    public string endQuestline;
+    public GameObject Npc;
     private void Start()
     {
-        dialouge = GetComponent<InteractionDialouge>();
+        dialouge = Npc.GetComponent<InteractionDialouge>();
         BanditQuest = ActiveQuest.GetComponent<BanditQuest>();
         
     }
@@ -21,9 +23,10 @@ public class QuestGive : MonoBehaviour
         }
         if(BanditQuest.end == true)
         {
-            FindObjectOfType<DialogeManager>().CharismaSpeech(dialouge.dialogue.charismaresponse);
+            dialouge.dialogue.endline = endQuestline;
         }
     }
+   
     public  void StartQuest()
     {
 

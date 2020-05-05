@@ -32,10 +32,9 @@ public class PlayerMovment : MonoBehaviour
     }
     void Update()
     {
-     
+        float z = Input.GetAxis("Vertical");
         if (controller.isGrounded)
         {
-         
             if (Input.GetMouseButtonDown(0))
             {
                 anim.SetBool("Attack", true);
@@ -51,40 +50,31 @@ public class PlayerMovment : MonoBehaviour
             }
 
             if (Input.GetKey(KeyCode.W))
-            {
-                anim.SetBool("Walking", true);
-                move = new Vector3(0, 0, 1);
-                move *= speed;
-                move = transform.TransformDirection(move);
-            }
-            if (Input.GetKeyUp(KeyCode.W))
-            {
-                move = new Vector3(0, 0, 0);
-                anim.SetBool("Walking", false);
-            }
+             anim.SetBool("Walking", true);
+            else
+            anim.SetBool("Walking", false);
+            
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
-
-                speed *= runspeed;
+                speed = runspeed;
                 anim.SetBool("Run", true);
                 running = true;
             }
-
-
-            if (Input.GetKeyUp(KeyCode.LeftShift))
+            else
             {
                 running = false;
                 speed = speed2;
                 anim.SetBool("Run", false);
             }
-           
             if (staminat != null) staminat.Invoke();
+            move = transform.forward * z * speed;
             spin += Input.GetAxis("Horizontal");
             transform.eulerAngles = new Vector3(0, spin, 0);
         }
 
         controller.Move(move * Time.deltaTime);
+        
     }
   
     

@@ -98,7 +98,12 @@ public class DialogeManager : MonoBehaviour
 
     }
 
-    public void CharismaSpeech(string text)
+    public void CharismaSpeech(Dialogue dialogue)
+    {
+        
+        Dt[0].AddText(dialogue.charismaresponse);
+    }
+    public void EndQuestLine(string text)
     {
         Dt[0].AddText(text);
     }

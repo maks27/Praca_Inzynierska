@@ -18,10 +18,12 @@ public class PlayerStats : CharacterStats
     public int pointsperlevel;
     int temppoints;
     public int currentexp;
+    public GameObject levelup;
     public float Currentstamina { get; set; }
     // Start is called before the first frame update
     void Start()
     {
+       
         EquipmentManage.Manage.onEquipinfo += OnEquipchange;
         maxHealth = 100;
         CurrentHealth = maxHealth;
@@ -38,12 +40,14 @@ public class PlayerStats : CharacterStats
         if(currentexp >=100)
         {
             LevelUp();
+            levelup.SetActive(true);
             currentexp = 0;
         }
          if(temppoints <= 0)
         {
             Strlevel.interactable = false;
             Charismlevel.interactable = false;
+            levelup.SetActive(false);
         }
        
     }
@@ -90,6 +94,14 @@ public class PlayerStats : CharacterStats
     {
         charism += 1;
         temppoints -= 1;
+    }
+    public void Heal(int hpheal)
+    {
+        Mathf.Clamp(CurrentHealth, 0, 100);
+        if(CurrentHealth < maxHealth)
+        {
+            CurrentHealth += hpheal;
+        }
     }
 
 }

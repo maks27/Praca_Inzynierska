@@ -13,7 +13,14 @@ public class Inventory : MonoBehaviour
     public bool check = false;
     public delegate void ChangedItem();
     public ChangedItem onItemChangeinfo;
+    MouseLook mouseLook;
+    public Camera cam;
 
+
+    private void Start()
+    {
+        mouseLook = cam.GetComponent<MouseLook>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -21,11 +28,12 @@ public class Inventory : MonoBehaviour
         if(enableInventory ==true)
         {
             inventory.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
+            mouseLook.checkcursor = false;
             PauseGame();
         }
-        else
+        if(enableInventory == false)
         {
+            mouseLook.checkcursor = true;
             inventory.SetActive(false);
             ContinueGame();
         }
