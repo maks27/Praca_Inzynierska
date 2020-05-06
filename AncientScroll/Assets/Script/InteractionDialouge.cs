@@ -8,11 +8,12 @@ public class InteractionDialouge : Interactive
     public bool EndDialouge = false;
     DialogeManager manager;
     public GameObject managerInstance;
-
-
+    QuestGive banditQuest;
+    public bool check = false;
     private void Start()
     {
         manager = managerInstance.GetComponent<DialogeManager>();
+        banditQuest = GetComponent<QuestGive>();
     }
     public override void Interact()
     {
@@ -21,7 +22,6 @@ public class InteractionDialouge : Interactive
         {
             Conversation();
             EndDialouge = true;
-            
 
         }
     }
@@ -29,11 +29,15 @@ public class InteractionDialouge : Interactive
     {
 
         FindObjectOfType<DialogeManager>().MakeDialogue(dialogue,EndDialouge);
-        
+        if(check == true)
+        {
+            FindObjectOfType<DialogeManager>().EndQuestLine(banditQuest.endQuestline);
+        }
 
 
 
     }
+
 
     
 }

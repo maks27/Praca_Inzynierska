@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class QuestGive : Interactive
 {
     InteractionDialouge dialouge;
@@ -23,7 +24,9 @@ public class QuestGive : Interactive
         }
         if(BanditQuest.end == true)
         {
-            dialouge.dialogue.endline = endQuestline;
+            dialouge.check = true;
+          
+            
         }
     }
    
@@ -32,5 +35,6 @@ public class QuestGive : Interactive
 
         ActiveQuest.SetActive(true);
     }
+
      
 }

@@ -17,8 +17,6 @@ public class DialogueEnemy : MonoBehaviour
     public GameObject player;
     DialogeManager manager;
     public GameObject managerInstance;
-    public GameObject textdisable;
-    public GameObject endbutton;
     public GameObject Enemy1;
     public GameObject Enemy2;
     public GameObject Quest;
@@ -78,9 +76,7 @@ public class DialogueEnemy : MonoBehaviour
     {
         FindObjectOfType<DialogeManager>().CharismaSpeech(dialogue);
         controller.enabled = false;
-        textdisable.SetActive(false);
         charismaoption.SetActive(false);
-        endbutton.SetActive(true);
         BanditQuest.talk = true;
 
     }

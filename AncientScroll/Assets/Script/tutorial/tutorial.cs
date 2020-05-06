@@ -30,7 +30,7 @@ public class tutorial : MonoBehaviour
     void Start()
     {
         text = tutorialtext.GetComponent<TextMeshProUGUI>();
-        text.text = "witaj w grze Starożytny zwój wciśnij W aby się poruszyć";
+        text.text = "Witaj w grze Starożytny Zwój.Wciśnij klawisz W aby się poruszyć.";
         pickup = sword.GetComponent<IPickup>();
         pickup2 = potion.GetComponent<IPickup>();
         text2 = invtext.GetComponent<TextMeshProUGUI>();
@@ -85,7 +85,7 @@ public class tutorial : MonoBehaviour
             if(Input.GetKey(KeyCode.I))
             {
                 invtext.SetActive(true);
-                text2.text = "W ekwipunku znajdują się posiadane przedmioty,statystyki bohatera oraz dziennik zadań.Słuzy on także do rozwijania cech bohatera ,gdy ten zdobędzie nowy poziom.Aby użyć dany przedmiot, kliknij na niego i zamknij ekwipunek wciskając klawisz I";
+                text2.text = "W ekwipunku znajdują się posiadane przedmioty, statystyki bohatera oraz dziennik zadań.Słuzy on także do rozwijania cech bohatera, gdy ten zdobędzie nowy poziom. Aby użyć dany przedmiot, kliknij na niego i zamknij ekwipunek wciskając klawisz I";
                 check5 = false;
                 check6 = true;
                 tutorialtext.SetActive(false);
@@ -100,7 +100,7 @@ public class tutorial : MonoBehaviour
                 if (Inventory.enableInventory == false)
                 {
                     tutorialtext.SetActive(true);
-                    text.text = "Aby poruszać się szybciej wciśnij klawisz shift podczas ruchu bohatera";
+                    text.text = "Aby poruszać się szybciej wciśnij klawisz shift podczas ruchu bohatera.";
                     check6 = false;
                     check7 = true;
 
@@ -113,7 +113,7 @@ public class tutorial : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                text.text =  "Teraz wciśnij lewy przycisk myszki aby wykonać atak";
+                text.text =  "Teraz wciśnij lewy przycisk myszki aby wykonać atak.";
                 check7 = false;
                 check8 = true;
                 invtext.SetActive(false);
@@ -124,7 +124,7 @@ public class tutorial : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
             
-                text.text = "Świetnie ostatnią rzeczą jest menu do którego możesz się dostać wciskając klawisz esc.Znajdziesz tam ustawienia głośności gry.Życzę miłej zabawy";
+                text.text = "Świetnie ostatnią rzeczą jest menu do którego możesz się dostać wciskając klawisz esc. Znajdziesz tam ustawienia głośności gry. Życzę miłej zabawy.";
                 check8 = false;
                 check9 = true;
             }

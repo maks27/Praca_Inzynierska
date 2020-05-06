@@ -31,8 +31,7 @@ public class BanditQuest : MonoBehaviour
       
         Enemy2.SetActive(true);
         Enemy3.SetActive(true);
-           
-        
+
             
         TextMesh.text = questname;
         if (enemyStats.isdie == true || talk == true)

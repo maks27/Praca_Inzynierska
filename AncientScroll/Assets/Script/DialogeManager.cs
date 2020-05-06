@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 
 
 public class DialogeManager : MonoBehaviour
@@ -20,6 +20,7 @@ public class DialogeManager : MonoBehaviour
     Queue<string> npcconversation;
     Queue<string> playerresponse;
     public bool endcheck = false;
+  
     void Start()
     {
         player = MovementManager.movement;
@@ -33,6 +34,7 @@ public class DialogeManager : MonoBehaviour
 
     public void MakeDialogue(Dialogue dialogue,bool end)
     {
+            button.onClick.RemoveListener(EndConv);
             Cursor.lockState = CursorLockMode.None;
             enableDialogueBox = true;
             npcconversation.Clear();
@@ -104,11 +106,20 @@ public class DialogeManager : MonoBehaviour
     {
         
         Dt[0].AddText(dialogue.charismaresponse);
+        Dt[1].AddText("Koniec");
+        button.onClick.AddListener(EndConv);
+
     }
     public void EndQuestLine(string text)
     {
         Dt[0].AddText(text);
+        Dt[1].AddText("Koniec");
+        button.onClick.AddListener(EndQuest);
     }
-    
+    public void EndQuest()
+    {
+        SceneManager.LoadScene(3);
+    }
+
 
 }

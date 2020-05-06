@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
     <Compile Include="Assets\Script\AI\BattleMusci.cs" />
     <Compile Include="Assets\Script\AI\Enemy.cs" />
     <Compile Include="Assets\Script\AI\EnemyController.cs" />
@@ -109,7 +108,8 @@
     <Compile Include="Assets\Script\UI\Item.cs" />
     <Compile Include="Assets\Script\UI\Menu.cs" />
     <Compile Include="Assets\Script\UI\MenuinGame.cs" />
-    <None Include="Assets\Rocks and Boulders 2\Shaders\shader info.txt" />
+    <Compile Include="Assets\Terrain\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
+    <None Include="Assets\Terrain\Rocks and Boulders 2\Shaders\shader info.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
@@ -126,13 +126,13 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
+    <None Include="Assets\Terrain\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
+    <None Include="Assets\Terrain\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
