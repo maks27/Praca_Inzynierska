@@ -35,6 +35,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("Walk", false);
         float distance = Vector3.Distance(target.position, transform.position);
         if(wait == false)
         {

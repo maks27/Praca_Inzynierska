@@ -131,7 +131,7 @@ public class tutorial : MonoBehaviour
         }
         if (check9 == true)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Destroy(gameObject);
             }

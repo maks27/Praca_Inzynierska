@@ -16,6 +16,7 @@ public class DialogeManager : MonoBehaviour
     bool enableDialogueBox = false;
     DialogueText[] Dt;
     public Button button;
+    MouseLook MouseLook;
     Queue<string> npcconversation;
     Queue<string> playerresponse;
     public bool endcheck = false;
@@ -26,6 +27,7 @@ public class DialogeManager : MonoBehaviour
         npcconversation = new Queue<string>();
         playerresponse = new Queue<string>();
         Dt = Texttransform.GetComponentsInChildren<DialogueText>();
+        MouseLook = camMenager.GetComponent<MouseLook>();
     }
 
 
@@ -35,7 +37,7 @@ public class DialogeManager : MonoBehaviour
             enableDialogueBox = true;
             npcconversation.Clear();
             playerresponse.Clear();
-            camMenager.GetComponent<MouseLook>().enabled = false;
+            MouseLook.pause = true;
             player.GetComponent<PlayerMovment>().enabled = false;
         if (end == false)
         {
@@ -93,9 +95,9 @@ public class DialogeManager : MonoBehaviour
         {
             DialogueBox.SetActive(false);
         }
-        camMenager.GetComponent<MouseLook>().enabled = true;
+        MouseLook.pause = false;
         player.GetComponent<PlayerMovment>().enabled = true;
-
+       
     }
 
     public void CharismaSpeech(Dialogue dialogue)

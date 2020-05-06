@@ -25,26 +25,21 @@ public class Inventory : MonoBehaviour
     }
     void Update()
     {
-        if(Menu.activeSelf)
-        {
-            inventory.SetActive(false);
-        }
         if (Input.GetKeyDown(KeyCode.Escape))
             enableMenu = !enableMenu;
         if (Input.GetKeyDown(KeyCode.I))
             enableInventory = !enableInventory;
         if (enableMenu == true)
-        {
-            inventory.SetActive(false);
+        { 
             Menu.SetActive(true);
             mouseLook.checkcursor = false;
             PauseGame();
         }
         if (enableMenu== false)
         {
-            mouseLook.checkcursor = true;
             Menu.SetActive(false);
             ContinueGame();
+            mouseLook.checkcursor = true;
         }
         if(enableInventory ==true)
         {

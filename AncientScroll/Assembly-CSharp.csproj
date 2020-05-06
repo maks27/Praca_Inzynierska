@@ -63,16 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BanditQuest.cs" />
-    <Compile Include="Assets\DialogueEnemy.cs" />
-    <Compile Include="Assets\MouseLook.cs" />
-    <Compile Include="Assets\QuestGive.cs" />
-    <Compile Include="Assets\QuestName.cs" />
-    <Compile Include="Assets\ResponseSlot.cs" />
+    <Compile Include="Assets\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
     <Compile Include="Assets\Script\AI\BattleMusci.cs" />
     <Compile Include="Assets\Script\AI\Enemy.cs" />
     <Compile Include="Assets\Script\AI\EnemyController.cs" />
     <Compile Include="Assets\Script\AI\EnemyStats.cs" />
+    <Compile Include="Assets\Script\BanditQuest.cs" />
     <Compile Include="Assets\Script\Character\CharacterStats.cs" />
     <Compile Include="Assets\Script\Character\Npcanimator.cs" />
     <Compile Include="Assets\Script\Character\Stats.cs" />
@@ -80,6 +76,7 @@
     <Compile Include="Assets\Script\CursorMode.cs" />
     <Compile Include="Assets\Script\DialogeManager.cs" />
     <Compile Include="Assets\Script\Dialogue.cs" />
+    <Compile Include="Assets\Script\DialogueEnemy.cs" />
     <Compile Include="Assets\Script\DialogueText.cs" />
     <Compile Include="Assets\Script\GameData\DataPlayer.cs" />
     <Compile Include="Assets\Script\GameData\SaveGame.cs" />
@@ -94,6 +91,7 @@
     <Compile Include="Assets\Script\Inventory\InvSlot.cs" />
     <Compile Include="Assets\Script\Inventory\InvUI.cs" />
     <Compile Include="Assets\Script\Inventory\IPickup.cs" />
+    <Compile Include="Assets\Script\MouseLook.cs" />
     <Compile Include="Assets\Script\Npc.cs" />
     <Compile Include="Assets\Script\Other\ConverttoMEsh.cs" />
     <Compile Include="Assets\Script\Player\CameraMAin.cs" />
@@ -103,16 +101,20 @@
     <Compile Include="Assets\Script\Player\PlayerMovment.cs" />
     <Compile Include="Assets\Script\Player\PlayerStats.cs" />
     <Compile Include="Assets\Script\Player\Walking.cs" />
+    <Compile Include="Assets\Script\QuestGive.cs" />
+    <Compile Include="Assets\Script\QuestName.cs" />
+    <Compile Include="Assets\Script\ResponseSlot.cs" />
+    <Compile Include="Assets\Script\Stats_text.cs" />
     <Compile Include="Assets\Script\tutorial\tutorial.cs" />
     <Compile Include="Assets\Script\UI\Item.cs" />
     <Compile Include="Assets\Script\UI\Menu.cs" />
     <Compile Include="Assets\Script\UI\MenuinGame.cs" />
-    <Compile Include="Assets\Stats_text.cs" />
+    <None Include="Assets\Rocks and Boulders 2\Shaders\shader info.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\Low Polygon Potions Pack\Readme.txt" />
+    <None Include="Assets\Items\Low Polygon Potions Pack\Readme.txt" />
     <None Include="Assets\Terrain\MedievalTownExteriors\Readme.txt" />
     <None Include="Assets\Terrain\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
@@ -124,11 +126,13 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">

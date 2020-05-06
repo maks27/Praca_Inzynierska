@@ -29,7 +29,7 @@ public class MenuinGame : MonoBehaviour
     void Update()
     {
         mouseLook.checkcursor = false;
-        
+        Time.timeScale = 0;
     }
     public void NewGame()
     {
