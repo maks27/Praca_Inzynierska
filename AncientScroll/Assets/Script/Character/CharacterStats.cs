@@ -14,7 +14,7 @@ public class CharacterStats : MonoBehaviour
         CurrentHealth = maxHealth;
 
     }
-    public void  Damage(int damage)
+    public  void  Damage(int damage)
     {
         damage -= armor.GetValue();
         damage = Mathf.Clamp(damage, 0, int.MaxValue);

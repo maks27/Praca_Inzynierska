@@ -19,15 +19,20 @@ public class PlayerStats : CharacterStats
     int temppoints;
     public int currentexp;
     public GameObject levelup;
+    public delegate void changestrenght();
+    public changestrenght Changestrenght;
+    int strmodifaier;
     public float Currentstamina { get; set; }
     // Start is called before the first frame update
     void Start()
     {
-       
+        strmodifaier = strenght / 2;
+        damage.AddMod(strmodifaier);
         EquipmentManage.Manage.onEquipinfo += OnEquipchange;
         maxHealth = 100;
         CurrentHealth = maxHealth;
         Currentstamina = maxstamina;
+        Changestrenght += changestrenghtmod;
     }
 
     // Update is called once per frame
@@ -89,6 +94,7 @@ public class PlayerStats : CharacterStats
     {
         strenght += 1;
         temppoints -= 1;
+        if (Changestrenght != null) Changestrenght.Invoke();
     }
     public void addCharism()
     {
@@ -102,6 +108,10 @@ public class PlayerStats : CharacterStats
         {
             CurrentHealth += hpheal;
         }
+    }
+    public void changestrenghtmod()
+    {
+        damage.AddMod(strmodifaier);
     }
 
 }
