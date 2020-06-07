@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class tutorial : MonoBehaviour
+public class Tutorial : MonoBehaviour
 {
     TextMeshProUGUI text;
     TextMeshProUGUI text2;
@@ -30,7 +30,7 @@ public class tutorial : MonoBehaviour
     void Start()
     {
         text = tutorialtext.GetComponent<TextMeshProUGUI>();
-        text.text = "Witaj w grze Starożytny Zwój.Wciśnij klawisz W aby się poruszyć.";
+        text.text = "Witaj w grze Starożytny Zwój. Wciśnij klawisz 'W' aby się poruszyć.";
         pickup = sword.GetComponent<IPickup>();
         pickup2 = potion.GetComponent<IPickup>();
         text2 = invtext.GetComponent<TextMeshProUGUI>();
@@ -47,7 +47,7 @@ public class tutorial : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
             {
-                text.text = "Teraz wciśnij klaiwsz D lub A aby obrócić postać.";
+                text.text = "Teraz wciśnij klaiwsz 'D' lub 'A' aby obrócić postać.";
                 check = false;
                 check2 = true;
             }
@@ -74,7 +74,7 @@ public class tutorial : MonoBehaviour
         {
             if(pickup.pick == true && pickup2.pick == true)
             {
-                text.text = "Dobrze teraz otwórz ekwipunek wciskając kalwisz I";
+                text.text = "Dobrze teraz otwórz ekwipunek wciskając kalwisz 'I'.";
                 check4 = false;
                 check5 = true;
             }

@@ -19,12 +19,15 @@ public class EnemyStats : CharacterStats
     }
     public override void Die()
     {
-        playerStats.currentexp += numberexp;
-        base.Die();
-        isdie = true;
-        hp.SetActive(false);
-        Destroy(gameObject);
-        audioSource.enabled = true;
+        if (this.gameObject != null)
+        {
+            playerStats.currentexp += numberexp;
+            base.Die();
+            isdie = true;
+            hp.SetActive(false);
+            audioSource.enabled = true;
+            Destroy(gameObject);
+        }
 
     }
 }

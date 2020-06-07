@@ -17,5 +17,5 @@ MonoBehaviour:
   isDefItem: 0
   Cathegories: 1
   mesh: {fileID: 4053592146457977938, guid: b015dbba46a3950469801c9d578219e8, type: 3}
-  armorm: 0
-  damagem: 3
+  armorm: 5
+  damagem: 0

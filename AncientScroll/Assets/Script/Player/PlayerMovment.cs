@@ -35,19 +35,17 @@ public class PlayerMovment : MonoBehaviour
         float z = Input.GetAxis("Vertical");
         if (controller.isGrounded)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 anim.SetBool("Attack", true);
+                if(Input.GetMouseButtonDown(0))
                 AnimationAttack();
                
 
             }
-            if (Input.GetMouseButtonUp(0))
-            {
+            else 
+            anim.SetBool("Attack", false);
 
-                anim.SetBool("Attack", false);
-
-            }
 
             if (Input.GetKey(KeyCode.W))
              anim.SetBool("Walking", true);
