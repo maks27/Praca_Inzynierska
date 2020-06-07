@@ -104,7 +104,7 @@
     <Compile Include="Assets\Script\QuestName.cs" />
     <Compile Include="Assets\Script\ResponseSlot.cs" />
     <Compile Include="Assets\Script\Stats_text.cs" />
-    <Compile Include="Assets\Script\tutorial\Tutorial.cs" />
+    <Compile Include="Assets\Script\Tutorial\Tutorial.cs" />
     <Compile Include="Assets\Script\UI\EndMenu.cs" />
     <Compile Include="Assets\Script\UI\Item.cs" />
     <Compile Include="Assets\Script\UI\Menu.cs" />
